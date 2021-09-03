@@ -1,7 +1,7 @@
 # .NET Core Ansible role
 ![Logo](logo.gif)
 
-[![Build Status](https://travis-ci.com/idealista/dotnetcore_role.png)](https://travis-ci.com/idealista/dotnetcore_role)
+[![Build Status](https://api.travis-ci.com/idealista/dotnetcore_role.png)](https://travis-ci.com/idealista/dotnetcore_role)
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-idealista.dotnetcore_role-B62682.svg)](https://galaxy.ansible.com/idealista/dotnetcore_role)
 
 
