@@ -1,0 +1,6 @@
+---
+
+- name: .NET Core | Install
+  include: install.yml
+  tags:
+    - dotnetcore_install

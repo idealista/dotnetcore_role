@@ -1,0 +1,19 @@
+---
+
+package:
+{% if dotnetcore_package_version is defined and dotnetcore_package_version is not sameas None and dotnetcore_package_version != "" %}
+  {{ dotnetcore_package }}:
+      installed: true
+      versions:
+        - {{ dotnetcore_package_version }}
+{% else %}
+  {{ dotnetcore_package }}:
+      installed: true
+{% endif %}
+command:
+  dotnet:
+    exit-status: 0
+    exec: "dotnet --info"
+    stdout:
+      - "Version: {{ dotnetcore_package_release if dotnetcore_package_release is defined and dotnetcore_package_release is not sameas None and dotnetcore_package_release != "" else dotnetcore_version  }}"
+

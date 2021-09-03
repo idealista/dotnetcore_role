@@ -1,0 +1,5 @@
+---
+- name: Converge
+  hosts: dotnetcore_group
+  roles:
+    - role: dotnetcore_role
