@@ -8,7 +8,7 @@
   until: apt_tools_installed is succeeded
   register: apt_tools_installed
 
-- name: .NET Core | Cofigure repositories
+- name: .NET Core | Configure repositories
   apt:
     deb: "{{ dotnetcore_repository_config_package }}"
 

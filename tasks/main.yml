@@ -1,5 +1,10 @@
 ---
 
+- name: .NET Core | Gather OS specific vars
+  include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+  tags:
+    - dotnetcore_vars
+
 - name: .NET Core | Install
   import_tasks: install.yml
   tags:

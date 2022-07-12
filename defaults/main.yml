@@ -13,7 +13,7 @@ dotnetcore_package: "{{ dotnetcore_package_name + '-' + dotnetcore_version }}"
 # dotnetcore_package_build: "1"
 # dotnetcore_package_version: "{{ dotnetcore_package_release }}-{{ dotnetcore_package_build }}"
 
-dotnetcore_repository_config_package: https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb
+dotnetcore_repository_config_package: "https://packages.microsoft.com/config/debian/{{ __dotnetcore_repository_config_package_version }}/packages-microsoft-prod.deb"
 
 dotnetcore_apt_extra_packages:
   - apt-transport-https
