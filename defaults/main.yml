@@ -2,7 +2,7 @@
 
 ## General
 # Version
-dotnetcore_version: "5.0"
+dotnetcore_version: "6.0"
 
 # You can install aspnetcore-runtime, dotnet-runtime, dotnet-sdk...
 dotnetcore_package_name: aspnetcore-runtime
@@ -13,13 +13,7 @@ dotnetcore_package: "{{ dotnetcore_package_name + '-' + dotnetcore_version }}"
 # dotnetcore_package_build: "1"
 # dotnetcore_package_version: "{{ dotnetcore_package_release }}-{{ dotnetcore_package_build }}"
 
-# Only for Debian 9
-dotnetcore_required_key_repositories: https://packages.microsoft.com/keys/microsoft.asc
-dotnetcore_required_repositories:
-  - deb [arch=amd64] https://packages.microsoft.com/debian/9/prod stretch main
-
-# Only for Debian 10
-dotnetcore_repository_config_package: https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb
+dotnetcore_repository_config_package: https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb
 
 dotnetcore_apt_extra_packages:
   - apt-transport-https
