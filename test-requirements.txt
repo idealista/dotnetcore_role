@@ -1,5 +1,6 @@
-ansible==5.2.0
-molecule==3.4.0
+ansible==6.0.0
+molecule==4.0.0
+molecule-docker==1.1.0
 docker==5.0.0
-ansible-lint==5.3.2
-rich==*
+ansible-lint==6.3.0
+rich==12.5.1

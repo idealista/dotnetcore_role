@@ -7,5 +7,7 @@ exclude_paths:
 parseable: true
 skip_list:
   - '204'
+warn_list:
+  - 'fqcn-builtins'
 use_default_rules: true
 verbosity: 1
