@@ -1,17 +1,17 @@
 ---
 
 galaxy_info:
-  author: frantsao
+  author: idealista
   company: Idealista S.A.U.
   description: Dotnetcore Role
-  min_ansible_version: 2.8
+  min_ansible_version: '2.8'
   license: Apache 2.0
-  galaxy-tags:
+  galaxy_tags:
     - dotnet
     - ansible
     - languages
   platforms:
     - name: Debian
       versions:
-        - stretch
+        - bullseye
         - buster
