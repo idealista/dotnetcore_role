@@ -1,40 +1,16 @@
 ---
 
-- block:
-    - name: .NET Core | Configure needed apt extra packages
-      package:
-        name: "{{ dotnetcore_apt_extra_packages }}"
-        state: present
-      until: apt_tools_installed is succeeded
-      register: apt_tools_installed
-      when: dotnetcore_apt_extra_packages |length > 0
-    - name: .NET Core | Cofigure key repositories
-      apt_key:
-        url: "{{ item }}"
-        state: present
-      with_items: "{{ dotnetcore_required_key_repositories }}"
-    - name: .NET Core | Cofigure repositories
-      apt_repository:
-        repo: "{{ item }}"
-        state: present
-        update_cache: true
-      with_items: "{{ dotnetcore_required_repositories }}"
-  when: ansible_distribution == 'Debian' and ansible_distribution_version == '9'
-  tags:
-    - dotnetcore_install
-- block:
-    - name: .NET Core | Configure needed apt extra packages
-      package:
-        name: "{{ dotnetcore_apt_extra_packages }}"
-        state: present
-      until: apt_tools_installed is succeeded
-      register: apt_tools_installed
-    - name: .NET Core | Cofigure repositories
-      apt:
-        deb: "{{ dotnetcore_repository_config_package }}"
-  when: ansible_distribution == 'Debian' and ansible_distribution_version == '10'
-  tags:
-    - dotnetcore_install
+
+- name: .NET Core | Configure needed apt extra packages
+  package:
+    name: "{{ dotnetcore_apt_extra_packages }}"
+    state: present
+  until: apt_tools_installed is succeeded
+  register: apt_tools_installed
+
+- name: .NET Core | Configure repositories
+  apt:
+    deb: "{{ dotnetcore_repository_config_package }}"
 
 - name: .NET Core | Install .net core package
   apt:

@@ -15,5 +15,4 @@ command:
     exit-status: 0
     exec: "dotnet --info"
     stdout:
-      - "Version: {{ dotnetcore_package_release if dotnetcore_package_release is defined and dotnetcore_package_release is not sameas None and dotnetcore_package_release != "" else dotnetcore_version  }}"
-
+      - "/Version:\\s*{{ dotnetcore_package_release if dotnetcore_package_release is defined and dotnetcore_package_release is not sameas None and dotnetcore_package_release != "" else dotnetcore_version  }}/"
